@@ -56,15 +56,16 @@ const Home = () => {
                 {
                     catData.length > 0 &&
                         catData.map((cat) => {
-                            return (
-                                <Cards
-                                    key={cat.id}
-                                    image={cat.image? cat.image.url : "https://www.prestashop.com/sites/default/files/wysiwyg/404_not_found.png"}
-                                    animals={cat.name}
-                                    desc={cat.description}
-                                    link={`/cats/${cat.image?.id}?type=cat`}
-                                />
-                            )
+                                return (
+                                    <Cards
+                                        key={cat.id}
+                                        image={cat.image? cat.image.url : "https://www.prestashop.com/sites/default/files/wysiwyg/404_not_found.png"}
+                                        animals={cat.name}
+                                        desc={cat.description}
+                                        link={`/cats/${cat.image?.id}?type=cat`}
+                                        disabled={cat.image ? false : true}
+                                    />
+                                )
                         })
                 }
                 {
@@ -77,6 +78,7 @@ const Home = () => {
                                     animals={dog.name}
                                     desc={dog.temperament}
                                     link={`/dogs/${dog.image?.id}?type=dog`}
+                                    disabled={dog.image ? false : true}
                                 />
                             )
                         })

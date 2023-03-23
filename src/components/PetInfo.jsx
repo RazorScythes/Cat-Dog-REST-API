@@ -114,7 +114,6 @@ const DogInfo = ({ image_id }) => {
             ]);
             setInfo(result)
             setLoading(false)
-            console.log(result)
         };
         //call function fetchData
         fetchData();

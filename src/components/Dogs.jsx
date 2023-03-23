@@ -56,6 +56,7 @@ const Dogs = () => {
                                     animals={dog.name}
                                     desc={dog.temperament}
                                     link={`/dogs/${dog.image?.id}?type=dog`}
+                                    disabled={dog.image ? false : true}
                                 />
                             )
                         })

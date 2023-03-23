@@ -40,7 +40,6 @@ const Cats = () => {
     //update the loading state when data is fetched
     useEffect(() => {
         if(catData.length > 0) setLoading(false)
-        console.log(catData)
     }, [catData])
 
     return (
@@ -51,13 +50,14 @@ const Cats = () => {
                     catData.length > 0 &&
                         catData.map((cat) => {
                             return (
-                                <Cards
-                                    key={cat.id}
-                                    image={cat.image? cat.image.url : "https://www.prestashop.com/sites/default/files/wysiwyg/404_not_found.png"}
-                                    animals={cat.name}
-                                    desc={cat.description}
-                                    link={`/cats/${cat.image?.id}?type=cat`}
-                                />
+                                    <Cards
+                                        key={cat.id}
+                                        image={cat.image? cat.image.url : "https://www.prestashop.com/sites/default/files/wysiwyg/404_not_found.png"}
+                                        animals={cat.name}
+                                        desc={cat.description}
+                                        link={`/cats/${cat.image?.id}?type=cat`}
+                                        disabled={cat.image ? false : true}
+                                    />
                             )
                         })
                 }
